@@ -7,6 +7,7 @@ import Home from "./../pages/Home.jsx";
 import Statistic from "./../pages/Statistic.jsx";
 import Ranking from "./../pages/Ranking.jsx";
 import Shop from "./../pages/Shop.jsx";
+import Authentication from "../pages/Authentication";
 
 export default function App() {
     return (
@@ -22,6 +23,7 @@ export default function App() {
                                 path="/estatisticas"
                                 element={<Statistic />}
                             />
+                            <Route path="/auth" element={<Authentication />} />
                             <Route path="/ranking" element={<Ranking />} />
                             <Route path="/shop" element={<Shop />} />
                         </Routes>

@@ -6,7 +6,7 @@ export default function Statistic() {
     return (
         <Container>
             <Header />
-            {/* <main>Statistic</main> */}
+            <main>Statistic</main>
         </Container>
     );
 }
@@ -22,11 +22,11 @@ const Container = styled.div`
     align-items: center;
 
     main {
-        border: 7px solid var(--4);
-        border-radius: 20px;
+        background: rgba( 0, 0, 0, 0.7 );
+        backdrop-filter: blur( 9.5px );
+        -webkit-backdrop-filter: blur( 9.5px );
         height: 100%;
         width: 1150px;
-        background: var(--1);
         margin: 180px auto 20px auto;
         display: flex;
         flex-direction: column;

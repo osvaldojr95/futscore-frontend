@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
     * {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
         box-sizing: border-box;
     }
 

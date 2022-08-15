@@ -3,51 +3,57 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 export default function Menu(props) {
-    const [league, setLeague] = useState();
     const { setSeason, setTeam } = props;
+    const [league, setLeague] = useState();
     const [leagues, setLeagues] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {
         const URL = "http://localhost:4000/leagues";
-        try {
-            const response = await axios.get(URL);
-            const { leagues } = response.data;
-            setLeagues(leagues);
-        } catch (e) {}
+        axios
+            .get(URL)
+            .then((res) => {
+                const { leagues } = res.data;
+                setLeagues(leagues);
+            })
+            .catch((e) => {});
     }, []);
 
     return (
         <Container>
             <h1>Ligas</h1>
-            {leagues.map((item) => {
-                const seasons = item.Seasons.map((season) => {
+            {!leagues ? (
+                <></>
+            ) : (
+                leagues.map((item) => {
+                    const seasons = item.Seasons.map((season) => {
+                        return (
+                            <h3
+                                onClick={() => {
+                                    setSeason({
+                                        name: `${item.name} - ${season.name}`,
+                                        id: season.id,
+                                    });
+                                    setTeam(null);
+                                }}
+                            >
+                                {season.name}
+                            </h3>
+                        );
+                    });
                     return (
-                        <h3
-                            onClick={() => {
-                                setSeason({
-                                    name: `${item.name} - ${season.name}`,
-                                    id: season.id,
-                                });
-                                setTeam(null);
-                            }}
-                        >
-                            {season.name}
-                        </h3>
+                        <>
+                            <h2
+                                onClick={() => {
+                                    setLeague(item.id);
+                                }}
+                            >
+                                {item.name}
+                            </h2>
+                            {league === item.id ? seasons : <></>}
+                        </>
                     );
-                });
-                return (
-                    <>
-                        <h2
-                            onClick={() => {
-                                setLeague(item.id);
-                            }}
-                        >
-                            {item.name}
-                        </h2>
-                        {league === item.id ? seasons : <></>}
-                    </>
-                );
-            })}
+                })
+            )}
         </Container>
     );
 }

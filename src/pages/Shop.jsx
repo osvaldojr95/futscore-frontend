@@ -6,7 +6,7 @@ export default function Shop() {
     return (
         <Container>
             <Header />
-            <main>Shop</main>
+            <main>Loja em breve...</main>
         </Container>
     );
 }
@@ -22,9 +22,9 @@ const Container = styled.div`
     align-items: center;
 
     main {
-        background: rgba( 0, 0, 0, 0.7 );
-        backdrop-filter: blur( 9.5px );
-        -webkit-backdrop-filter: blur( 9.5px );
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(9.5px);
+        -webkit-backdrop-filter: blur(9.5px);
         height: 100%;
         width: 1150px;
         margin: 180px auto 20px auto;
@@ -32,6 +32,7 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: var(--4);
+        font-size: 25px;
     }
 `;

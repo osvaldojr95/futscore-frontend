@@ -24,7 +24,7 @@ export default function Authentication() {
         passwordSignup: "",
         passwordconfirmation: "",
     });
-    const { setUserInfo } = useUser();
+    const { userInfo, setUserInfo } = useUser();
     const navigate = useNavigate();
 
     const verifyInputs = (type) => {
@@ -127,6 +127,7 @@ export default function Authentication() {
                 navigate("/");
             } else {
                 localStorage.removeItem("userInfo");
+                setUserInfo({});
             }
         };
         verifyLogin();

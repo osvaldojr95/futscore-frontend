@@ -6,7 +6,9 @@ export default function Home() {
     return (
         <Container>
             <Header />
-            <main>Início</main>
+            <main>
+                <img src={"./assets/home.png"} />
+            </main>
         </Container>
     );
 }
@@ -22,9 +24,9 @@ const Container = styled.div`
     align-items: center;
 
     main {
-        background: rgba( 0, 0, 0, 0.7 );
-        backdrop-filter: blur( 9.5px );
-        -webkit-backdrop-filter: blur( 9.5px );
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(9.5px);
+        -webkit-backdrop-filter: blur(9.5px);
         height: 100%;
         width: 1150px;
         margin: 180px auto 20px auto;
@@ -33,5 +35,10 @@ const Container = styled.div`
         justify-content: center;
         align-items: center;
         color: white;
+
+        img {
+            height: 500px;
+            width: 800px;
+        }
     }
 `;

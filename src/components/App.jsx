@@ -5,7 +5,6 @@ import GlobalStyle from "../styles/globalStyles";
 import UserProvider from "../contexts/UserContext.jsx";
 import Home from "./../pages/Home.jsx";
 import Statistic from "./../pages/Statistic.jsx";
-import Ranking from "./../pages/Ranking.jsx";
 import Shop from "./../pages/Shop.jsx";
 import Authentication from "../pages/Authentication";
 
@@ -24,7 +23,6 @@ export default function App() {
                                 element={<Statistic />}
                             />
                             <Route path="/auth" element={<Authentication />} />
-                            <Route path="/ranking" element={<Ranking />} />
                             <Route path="/shop" element={<Shop />} />
                         </Routes>
                     </BrowserRouter>
